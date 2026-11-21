@@ -34,7 +34,7 @@ Route names are the paths the app's router will use (Expo Router file names).
 
 | Route / state | Screen | Notes | Status |
 | --- | --- | --- | --- |
-| `/` | Chat, on-device | Default. Header pill reads On-device. Step lists, check-in cards *(offline)* | [M] Chat — power outage |
+| `/` | Chat, on-device | Default. Grey Wi-Fi icon by Remii's name (green when online). Step lists, check-in cards *(offline)* | [M] Chat — power outage |
 | `/` (online reply) | Chat, online | Product cards with photo, reason, price, link out *(online)* | [M] Chat — product recommendations |
 | `/voice` | Voice | Full-screen Remii, waveform, live transcript, mic and SOS *(offline)* | [M] Voice |
 | `/` + attach sheet | Add photo or file | Camera, photo library, file picker | [ ] |
