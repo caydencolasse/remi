@@ -8,7 +8,7 @@ export default function ChatScreen() {
   return (
     <View style={styles.root}>
       <PlaceholderScreen title="Chat" route="/" mockup="docs/screens/Main.png" phase={1} />
-      <Link href="/menu" style={styles.link}>
+      <Link href="/dev" style={styles.link}>
         Open the list of all screens
       </Link>
     </View>

@@ -24,7 +24,8 @@ will need a development build on a real iPhone and a real Android phone.
 claude
 ```
 
-Then say: `Do the next unchecked item in TODO.md.`
+For the demo sprint, follow `docs/demo-prompts.md`: nine prompts to paste in
+order. After that, say: `Do the next unchecked item in TODO.md.`
 
 Claude Code reads `CLAUDE.md` on its own. That file holds the project rules.
 
@@ -33,5 +34,6 @@ Claude Code reads `CLAUDE.md` on its own. That file holds the project rules.
 - `docs/build-plan.md`: the plan
 - `docs/sitemap.md`: every screen
 - `docs/screens/`: the design for each mocked screen
+- `docs/demo-prompts.md`: the prompts that build the scripted demo
 - `TODO.md`: the task list
 - `CLAUDE.md`: instructions for Claude Code

@@ -5,6 +5,24 @@ Work from the top. One item per session. Tick an item only when
 
 Phases are described in `docs/build-plan.md`.
 
+## Demo sprint (do this first)
+
+Goal: a scripted, tappable demo in the iOS Simulator. Prompts are in
+`docs/demo-prompts.md`; paste them into Claude Code one at a time.
+
+- [ ] Prompt 0: tools and first run
+- [ ] Prompt 1: fonts, icons and shared components
+- [ ] Prompt 2: Chat and the outage flow
+- [ ] Prompt 3: car kit flow and Plans
+- [ ] Prompt 4: Briefing, Ideas, Library
+- [ ] Prompt 5: Remii profile and Share
+- [ ] Prompt 6: side menu and Settings
+- [ ] Prompt 7: Emergency SOS and Voice
+- [ ] Prompt 8: polish and rehearsal
+
+The demo sprint builds most of the Phase 0 screens. Tick the matching Phase 0
+items below as each prompt lands.
+
 ## Phase 0: foundations
 
 Done when the app installs on one iPhone and one Android phone and every mocked

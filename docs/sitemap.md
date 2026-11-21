@@ -1,6 +1,6 @@
 # Remii app sitemap
 
-Version 0.1, 20 November 2026. Covers the React Native phone app (iOS and Android) and the native Apple Watch app.
+Version 0.2, 20 November 2026. Covers the React Native phone app (iOS and Android) and the native Apple Watch app.
 
 Legend: **[M]** mocked up on the design canvas, **[ ]** not yet designed, *(offline)* works with no connection, *(online)* needs a connection.
 
@@ -39,7 +39,7 @@ Route names are the paths the app's router will use (Expo Router file names).
 | `/voice` | Voice | Full-screen Remii, waveform, live transcript, mic and SOS *(offline)* | [M] Voice |
 | `/` + attach sheet | Add photo or file | Camera, photo library, file picker | [ ] |
 | `/` + check-in sheet | Schedule a check-in | Pick a time; choose whether a missed check-in alerts a contact | [ ] |
-| `/history` | Past conversations | Opened from the menu button | [ ] |
+| `/history` | Past conversations | Opened from Search in the side menu | [ ] |
 
 #### Tab 2 — Briefing `/briefing`
 
@@ -103,25 +103,33 @@ Route names are the paths the app's router will use (Expo Router file names).
 | `/sos/guide/[id]` | Emergency steps | One reviewed step per screen, large type, read aloud | [ ] |
 | `/sos/alert-sent` | Contacts alerted | Confirms who was texted and with what location | [ ] |
 
-### 1.5 Menu and settings (opened from the menu button)
+### 1.5 Side menu and settings (opened from the menu button in any header)
 
 | Route | Screen | Notes | Status |
 | --- | --- | --- | --- |
-| `/menu` | Menu | Past conversations, Settings, Help | [ ] |
-| `/settings` | Settings | Sections below | [ ] |
+| `/menu` | Side menu | Slides in from the left over the current screen. Tabs, Create a space, side chats, Settings, Search, New chat | [M] Side menu |
+| `/menu` + create space | Create a space | Add a space for a trip, a vehicle or a person; hold a tab to reorder | [ ] |
+| `/settings` | Settings | "Ready offline" card, then the rows below | [M] Settings |
 | `/settings/offline` | Offline model | Model in use, storage used, re-download, on-device only switch | [ ] |
 | `/settings/contacts` | Emergency contacts | Add, remove, test message | [ ] |
-| `/settings/notifications` | Check-ins and alerts | Quiet hours, missed check-in behaviour | [ ] |
-| `/settings/privacy` | Privacy | What stays on the phone, what goes online, erase everything | [ ] |
 | `/settings/watch` | Apple Watch | Which guides sync to the watch | [ ] |
+| `/settings/permissions` | Permissions | Notifications, microphone, location, contacts | [ ] |
+| `/settings/connected-apps` | Connected apps | Apps Remii may act in *(online)* | [ ] |
+| `/settings/notifications` | Check-ins and alerts | Quiet hours, missed check-in behaviour | [ ] |
+| `/settings/appearance` | Appearance | Text size, light and dark | [ ] |
+| `/settings/voice` | Voice | Remii's voice and read-aloud speed | [ ] |
+| `/settings/privacy` | Privacy and data | What stays on the phone, what goes online, erase everything | [ ] |
+| `/settings/report` | Report an issue | Send a problem report | [ ] |
+| `/settings/help` | Help and support | Guides to using Remii, contact | [ ] |
+| `/settings/about` | About and legal | Disclaimers, guide sources and licences, version | [ ] |
 | `/settings/account` | Account | Optional sign-in, subscription | [ ] |
-| `/settings/about` | About | Disclaimers, guide sources and licences, version | [ ] |
+| `/dev` | All screens (development) | Index of every route for testing. Not part of the product | n/a |
 
 ### 1.6 System surfaces (outside the app)
 
 | Surface | Purpose | Status |
 | --- | --- | --- |
-| Check-in notification | "Morning. Is the power back on?" with I'm OK and Need help actions | [ ] |
+| Check-in notification | "Morning. Is the power back on?" with Yes and No, plan next steps actions | [ ] |
 | Alert notification | Weather or safety alert with What to do | [ ] |
 | Home screen widget | Plan readiness and one-tap SOS | [ ] |
 | Share extension | Send a PDF or web page to Remii's library from another app | [ ] |
@@ -137,8 +145,8 @@ Route names are the paths the app's router will use (Expo Router file names).
 | Answer | Short answer; Steps and read-aloud *(offline for saved guides)* | Listening, Quick asks | [M] |
 | One step at a time | Step counter, progress bar, one instruction, Done | Answer, Alert, Guides | [M] |
 | Quick asks | Power is out, Car trouble, Someone is hurt, I'm lost | Home, chat button | [M] |
-| Call | Call 911, emergency contact, Talk to Remii | Home, phone button | [M] |
-| Scheduled check-in | Question with I'm OK and Need help | Notification | [M] |
+| Call | Call 911, Call ICE 1 (first emergency contact), Talk to Remii | Home, phone button | [M] |
+| Scheduled check-in | Question with Yes and No, plan next steps | Notification | [M] |
 | Alert | Advisory text with What to do | Notification | [M] |
 | Offline guides | Guides stored on the watch | Scroll down from Home | [M] |
 | Complication | Remii face; tap opens Home | Watch face | [ ] |

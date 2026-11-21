@@ -82,6 +82,29 @@ Seven expressions live in `assets/remii/`. The brand rules:
   for greetings and sharing, `happy` for a finished plan, `calm` as the default.
 - Remii stays calm and credible. No exaggerated reactions.
 
+## Visual style
+
+Values are in `src/constants/theme.ts`. The design references in `docs/screens`
+are the source of truth.
+
+- **Brand gradient** (`Gradients.brand`, #EA0437 to #1B1B1B, top-left to
+  bottom-right): primary buttons, SOS and Call 911, step numbers, activity
+  icons, the Household card, Remii's speech bubble on the share card.
+- **User gradient** (`Gradients.user`, blue to #1B1B1B): the user's own chat
+  bubbles and the Memory card.
+- Secondary buttons are light: white or `chip` with ink text.
+- Remii's avatar is `assets/remii/avatar-<expression>.jpg`: full body on white
+  inside a circle, with space between Remii and the frame.
+- Connection status next to Remii's name is a Wi-Fi icon only, no text: grey
+  when answering on-device, green when online.
+
+## Demo sprint
+
+Until the demo is done, work from `docs/demo-prompts.md`, one prompt per
+session, in order. Demo content is scripted: it lives in `src/demo/`, never
+calls a model or the network, and is not the real answer path. The rules above
+still hold.
+
 ## Code conventions
 
 - TypeScript, strict. No `any` without a comment saying why.
