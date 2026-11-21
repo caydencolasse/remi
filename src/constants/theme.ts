@@ -61,11 +61,11 @@ export const Radius = {
 export const TouchTarget = 44;
 
 export const Type = {
-  title: { fontSize: 28, lineHeight: 34, fontWeight: '700' },
-  heading: { fontSize: 17, lineHeight: 22, fontWeight: '700' },
+  title: { fontSize: 28, lineHeight: 34, fontWeight: '600' },
+  heading: { fontSize: 17, lineHeight: 22, fontWeight: '500' },
   body: { fontSize: 15, lineHeight: 21, fontWeight: '400' },
-  bodyStrong: { fontSize: 16, lineHeight: 21, fontWeight: '700' },
+  bodyStrong: { fontSize: 16, lineHeight: 21, fontWeight: '500' },
   secondary: { fontSize: 14, lineHeight: 20, fontWeight: '400' },
   caption: { fontSize: 13, lineHeight: 18, fontWeight: '400' },
-  label: { fontSize: 12, lineHeight: 16, fontWeight: '600' },
+  label: { fontSize: 12, lineHeight: 16, fontWeight: '500' },
 } as const;

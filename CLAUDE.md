@@ -28,6 +28,7 @@ trace.
 | `assets/remii/` | Remii character renders and logos |
 | `content/guides/` | Guides Remii answers from offline |
 | `watch/` | Notes for the native Apple Watch app (Phase 5) |
+| `landing/` | The remii.ai website and waitlist. Plain HTML, not part of the app. Read `landing/README.md` before changing it. Tests: `npm run test:landing` |
 
 ## Commands
 

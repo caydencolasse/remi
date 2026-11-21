@@ -35,5 +35,6 @@ Claude Code reads `CLAUDE.md` on its own. That file holds the project rules.
 - `docs/sitemap.md`: every screen
 - `docs/screens/`: the design for each mocked screen
 - `docs/demo-prompts.md`: the prompts that build the scripted demo
+- `landing/`: the remii.ai website and waitlist (hosting steps in `landing/README.md`)
 - `TODO.md`: the task list
 - `CLAUDE.md`: instructions for Claude Code

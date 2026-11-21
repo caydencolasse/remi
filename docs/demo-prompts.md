@@ -171,17 +171,18 @@ Plans.png and PlanSheet.png.
 
 1. Add the car kit flow to src/demo with this wording.
    User: What should I keep in my car for emergencies?
-   Remii (explaining, online): Three jobs for a car kit: get out, get seen,
-     get through the wait. Start with these. I picked ones that fit a glovebox.
+   Remii (explaining, online): Three jobs for a car kit: get out, get going,
+     get through the wait. Start with these.
      Then a horizontally scrolling row of product cards:
-       GET OUT / resqme car escape tool / Cuts a jammed seatbelt, breaks a
-         side window.
-       GET SEEN / Roadside flare or beacon / Other drivers see you before
-         they reach you.
-       WAIT IT OUT / Compact first-aid kit / Covers cuts and burns until help
-         arrives.
-     Each card has a photo area, a [PRICE] placeholder and a gradient "View"
-     button that opens https://resqme.com in the browser.
+       Get out / resqme car escape tool / Cuts a jammed seatbelt, breaks a
+         side window / $9.95 / photo assets/products/resqme-tool.jpg
+       Get going / resqBox Pro / Jump starter with a built-in air
+         compressor / $64.95 / photo assets/products/resqbox-pro.jpg
+       Wait it out / Compact first-aid kit / Covers cuts and burns until help
+         arrives / no photo or price yet: show "Price to come" and a plain
+         photo area
+     Tags are sentence case. Each card has a gradient "View" button that
+     opens https://resqme.com in the browser.
      Then the line "Links open resqme.com in your browser." and one chip:
      "Add all to my Vehicle plan".
    Keep product data in src/demo/products.ts so real photos and prices can be

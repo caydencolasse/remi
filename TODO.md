@@ -71,9 +71,21 @@ screen is reachable and matches its design reference.
 
 ## Later phases
 
-Phase 3 (check-ins and plans), Phase 4 (online brain), Phase 5 (Apple Watch)
-and Phase 6 (beta) are outlined in `docs/build-plan.md`. Break each into tasks
+Phase 3 (check-ins and plans), Phase 4 (online brain), Phase 5 (Apple Watch),
+Phase 6 (beta), Phase 7 (in-app checkout), Phase 8 (live event tracking) and
+Phase 9 (RapidSOS) are outlined in `docs/build-plan.md`. Break each into tasks
 here when the phase before it is done.
+
+## Landing page (remii.ai)
+
+The page is in `landing/`. Hosting steps are in `landing/README.md`.
+
+- [x] Build the page from the design canvas, with the waitlist function and its tests
+- [ ] Owner: create the Brevo list and API key, create the Vercel project with Root Directory `landing`, add the two settings, deploy
+- [ ] Owner: point remii.ai and www.remii.ai at the Vercel project
+- [ ] Sign up once by email and once by phone on the live site and confirm both reach the Brevo list
+- [ ] Add a privacy policy page and link it in the footer
+- [ ] Have the phone-number consent wording checked before any text message is sent
 
 ## Waiting on the owner
 
@@ -83,3 +95,6 @@ here when the phase before it is done.
 - [ ] How Remii makes money, which decides how product links are disclosed
 - [ ] Remi or Remii as the single spelling
 - [ ] Whether a Wear OS watch app is wanted
+- [ ] Apply to RapidSOS as a Tech Partner (developer.rapidsos.com). Ask about pricing, certification and whether a monitoring centre is required. Long lead time; Phase 9 cannot start without it
+- [ ] Storefront API access to resqme's Shopify store for Remii (Phase 7), and confirmation the store's checkout is not on the old `checkout.liquid`
+- [ ] Which hazards and countries come first for live event tracking (Phase 8), and confirm it means live emergencies near the user rather than app analytics

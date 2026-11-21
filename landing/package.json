@@ -1,0 +1,6 @@
+{
+  "name": "remii-landing",
+  "private": true,
+  "type": "module",
+  "description": "remii.ai landing page. Static files plus one server function for the waitlist."
+}

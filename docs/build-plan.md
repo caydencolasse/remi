@@ -85,6 +85,59 @@ Durations are estimates for one or two engineers working with AI coding tools.
 Voice mode, the browser view and the Remii email address are the first things
 to cut if time is short.
 
+### After the beta: three additions
+
+Added 20 November 2026. These come after Phase 6 in build order, but each has
+paperwork with a long lead time, so the "start now" step should not wait.
+
+| Phase | What gets built | Done when | Estimate | Start now |
+| --- | --- | --- | --- | --- |
+| 7. In-app checkout | Buy a recommended product without leaving Remii: a cart built from resqme's Shopify store, paid in Shopify's own checkout sheet with Apple Pay, Google Pay or Shop Pay | A tester buys a resqme tool from a product card in chat on iPhone and on Android, and the order appears in resqme's Shopify admin | 2 to 3 weeks | Ask whoever runs resqme.com's Shopify store for Storefront API access for Remii |
+| 8. Live event tracking | Alerts for the places a person saves (home, cabin, a route): severe weather, earthquakes, wildfire. A live events list in Briefing, a push alert when something starts, and the matching saved guide one tap away | A test weather alert for a saved place reaches the phone as a notification within 2 minutes and opens the right guide. With no signal, Remii shows the last alerts it fetched and says how old they are | 3 to 4 weeks | Decide which hazards and which countries come first |
+| 9. RapidSOS | When someone calls 911 from Remii, their location and the profile they chose to share (name, medical notes, emergency contacts) are sent to the 911 centre through RapidSOS | RapidSOS signs off the integration in its test environment, and a supervised test call shows Remii's data on a 911 centre screen | 6 to 10 weeks, mostly waiting on RapidSOS | Apply to RapidSOS as a Tech Partner. Nothing can be built until they approve and issue credentials |
+
+Phase 7 only needs Phase 4 (the server and product cards), so it can run
+alongside Phase 5 or 6 if the store access arrives early.
+
+**How each one works, and what it must not break**
+
+- **Checkout (Phase 7).** resqme.com runs on Shopify. The Remii server asks
+  Shopify's Storefront API to create a cart and gets back a checkout link. The
+  app opens that link in Shopify's Checkout Kit, a sheet that slides up over
+  Remii. Shopify takes the payment, applies tax and creates the order, so
+  Remii never sees or stores card numbers. Physical goods are allowed to use
+  this kind of checkout on both app stores; Apple's and Google's own in-app
+  purchase systems are for digital goods. Checkout Kit is native code, so it
+  needs a development build rather than Expo Go, and it requires React Native
+  0.77 or later with the New Architecture, which this project already has.
+  Product cards keep saying which items are resqme's own, and the "open in
+  browser" link stays as the fallback when checkout cannot load.
+- **Live events (Phase 8).** "Live event tracking" is read here as tracking
+  live emergencies near the user, not app analytics. First sources are free US
+  government feeds: National Weather Service alerts and USGS earthquakes, with
+  wildfire and FEMA feeds next. The server watches the feeds and sends a push
+  notification. To do that it has to know roughly where a person's saved
+  places are, which means location leaves the phone. Under rule 6 that is an
+  opt-in feature with a screen that says exactly what is sent, and coarse
+  areas (county or forecast zone) are sent rather than street addresses. An
+  alert is shown in the issuing agency's own words; Remii does not rewrite it.
+- **RapidSOS (Phase 9).** RapidSOS is the service most US 911 centres use to
+  see extra data about a caller. It is not an open API: access is by
+  partnership. Its developer site describes two kinds of partner, and Remii
+  would be a Tech Partner, the kind that sends emergency information in. Its
+  products include an Alerts service that routes safety information to
+  emergency services, and its paid emergency API can add voice, text and a
+  staffed monitoring centre. Pricing, certification steps and whether a
+  monitoring centre is required are not published; that is the first thing to
+  ask them. Credentials live on the Remii server, never in the app. Rule 5
+  does not change: Call 911 still opens the phone dialer immediately, and the
+  RapidSOS data is sent alongside the call. If RapidSOS is slow or down, the
+  call is not delayed by a single second. Medical details are shared only if
+  the person turned that on and saw what would be sent.
+
+Until Phase 9 ships, nothing in the app, the store listing or remii.ai may say
+or imply that Remii sends data to 911.
+
 ## Open decisions
 
 See "Waiting on the owner" in `TODO.md`.
@@ -97,3 +150,8 @@ See "Waiting on the owner" in `TODO.md`.
 - Apple Developer Forums, React Native and Foundation Models: https://developer.apple.com/forums/thread/833676
 - React Native ExecuTorch: https://github.com/software-mansion/react-native-executorch
 - OpenAI web search tool: https://developers.openai.com/api/docs/guides/tools-web-search
+- RapidSOS developer portal: https://developer.rapidsos.com/
+- RapidSOS integration guidance (partner types): https://developer.rapidsos.com/getting_started/default/guidance
+- Shopify Checkout Kit: https://shopify.dev/docs/storefronts/mobile-next/checkout-kit
+- National Weather Service alerts API: https://www.weather.gov/documentation/services-web-api
+- USGS earthquake feeds: https://earthquake.usgs.gov/earthquakes/feed/
