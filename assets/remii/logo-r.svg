@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="2048" height="2048">
+  <defs>
+    <!-- Red diagonal gradient matching the Muse-inspired R monogram -->
+    <linearGradient id="remiiRedGradient" x1="25%" y1="86%" x2="76%" y2="18%" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#D40323"/>
+      <stop offset="48%" stop-color="#EE1425"/>
+      <stop offset="100%" stop-color="#FF514A"/>
+    </linearGradient>
+  </defs>
+
+  <g id="Remii_R_Monogram" fill="none" stroke="url(#remiiRedGradient)" stroke-width="84" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Left vertical curved stem -->
+    <path id="Left_Stem" d="M 304 812 C 306 640, 326 490, 444 360"/>
+
+    <!-- Continuous sweeping arch, loop, and tail -->
+    <path id="Ribbon_Arch_And_Tail" d="M 206 468
+             C 242 286, 420 200, 582 214
+             C 718 226, 766 338, 724 456
+             C 684 568, 526 654, 444 618
+             C 406 601, 412 532, 468 528
+             C 526 524, 574 586, 622 686
+             C 670 784, 744 826, 816 776"/>
+  </g>
+</svg>
