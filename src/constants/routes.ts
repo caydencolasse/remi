@@ -37,6 +37,8 @@ export const APP_ROUTES: readonly AppRoute[] = [
   { route: '/sos', title: 'Emergency SOS', mockup: "docs/screens/Emergency.png", phase: 2 },
   { route: '/sos/guide/[id]', title: 'Emergency steps', mockup: null, phase: 2 },
   { route: '/sos/alert-sent', title: 'Contacts alerted', mockup: null, phase: 2 },
+  { route: '/sos/silent', title: 'Silent alert', mockup: "docs/screens/SilentAlert.png", phase: 9 },
+  { route: '/sos/silent/active', title: 'Silent alert: status and chat', mockup: "docs/screens/SilentChat.png", phase: 9 },
   { route: '/welcome', title: 'Welcome', mockup: null, phase: 6 },
   { route: '/welcome/permissions', title: 'Permissions', mockup: null, phase: 6 },
   { route: '/welcome/model', title: 'Offline setup', mockup: null, phase: 1 },

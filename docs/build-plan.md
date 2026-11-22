@@ -138,6 +138,63 @@ alongside Phase 5 or 6 if the store access arrives early.
 Until Phase 9 ships, nothing in the app, the store listing or remii.ai may say
 or imply that Remii sends data to 911.
 
+### "I can't talk": the silent alert (part of Phase 9)
+
+Designed 21 November 2026. Screens: `SilentAlert`, `SilentChat`, `WatchSilent`
+and `WatchSilentSent` in `docs/screens/`, plus a new row on Emergency SOS and
+on the watch's Call list.
+
+**What the person does**
+
+1. Opens SOS and taps "I can't talk", the second row, directly under Call 911.
+2. Sees exactly what will be sent: live location, name and phone, medical
+   notes, and which contacts get a text. Can tap a reason ("I'm hurt",
+   "Someone is hurting me", "Break-in", "Fire"). The reason is optional.
+3. Holds the button for 2 seconds. The hold is there to stop pocket presses.
+4. Lands on a status screen with four steps, each ticked only when it has
+   really happened: alert sent, contacts texted, a safety agent is checking,
+   passed to 911.
+5. Can answer the agent by tapping a quick reply or typing. Remii makes no
+   sound and no vibration while this screen is open.
+
+**How it works behind the screen**
+
+- The app sends the alert to the Remii server. The server raises a RapidSOS
+  digital alert and, separately, texts the emergency contacts through a
+  text-message provider. RapidSOS credentials and the text provider's key
+  live on the server only.
+- RapidSOS describes this kind of alert as checked by a live safety agent, who
+  then passes the data to the 911 center and can chat with it. The chat on the
+  status screen is with that agent. Whether a consumer app can skip the agent
+  step is an open question for RapidSOS.
+- Contact texts do not depend on RapidSOS. They can ship earlier, in Phase 2
+  or 3, as the existing "Alert my contacts" row.
+
+**Rules this feature must keep**
+
+- Call 911 stays first on the SOS screen and is on every silent-alert screen.
+  The silent alert never replaces or delays a call (rule 5).
+- It needs a data connection. With no signal the screen says "this can't send,
+  so call 911" and does not show a send button that will fail.
+- No step is shown as done until the server confirms it. In particular the
+  app never says 911 has the alert until RapidSOS reports it delivered.
+- Location, medical notes and contact details leave the phone only when the
+  person sends the alert, and the screen lists them first (rule 6). What is
+  shared is set up in advance under About you and can be edited from the
+  confirm screen.
+- Wording on these screens is fixed text, not generated (rule 3).
+
+**Questions to settle before building**
+
+- Does RapidSOS allow a consumer app to send alerts, and is its agent step
+  required? What does it cost per alert or per user?
+- Which text-message provider sends the contact texts, and who registers the
+  sender with US carriers?
+- How are accidental and false alerts cancelled, and what does the person see
+  if the agent cannot reach them?
+- Should the watch be able to send on its own over cellular, or only through
+  the phone?
+
 ## Open decisions
 
 See "Waiting on the owner" in `TODO.md`.

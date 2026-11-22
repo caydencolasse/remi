@@ -95,6 +95,7 @@ The page is in `landing/`. Hosting steps are in `landing/README.md`.
 - [ ] How Remii makes money, which decides how product links are disclosed
 - [ ] Remi or Remii as the single spelling
 - [ ] Whether a Wear OS watch app is wanted
+- [ ] Ask RapidSOS whether a consumer app can send a silent, no-voice alert and whether their safety-agent step is required (the "I can't talk" flow in `docs/build-plan.md`)
 - [ ] Apply to RapidSOS as a Tech Partner (developer.rapidsos.com). Ask about pricing, certification and whether a monitoring centre is required. Long lead time; Phase 9 cannot start without it
 - [ ] Storefront API access to resqme's Shopify store for Remii (Phase 7), and confirmation the store's checkout is not on the old `checkout.liquid`
 - [ ] Which hazards and countries come first for live event tracking (Phase 8), and confirm it means live emergencies near the user rather than app analytics

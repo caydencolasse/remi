@@ -99,9 +99,11 @@ Route names are the paths the app's router will use (Expo Router file names).
 
 | Route / state | Screen | Notes | Status |
 | --- | --- | --- | --- |
-| `/sos` | Emergency SOS | Call 911, alert contacts, first aid, trapped in a vehicle *(offline)* | [M] Emergency SOS |
+| `/sos` | Emergency SOS | Call 911, I can't talk, alert contacts, first aid, trapped in a vehicle *(offline)* | [M] Emergency SOS |
 | `/sos/guide/[id]` | Emergency steps | One reviewed step per screen, large type, read aloud | [ ] |
 | `/sos/alert-sent` | Contacts alerted | Confirms who was texted and with what location | [ ] |
+| `/sos/silent` | Silent alert | "I can't talk". Shows what will be sent (location, name and phone, medical notes, contacts), optional reason chips, hold to send, Call 911 instead. Needs a data connection and says so *(Phase 9, needs RapidSOS)* | [M] Silent alert — confirm and send |
+| `/sos/silent/active` | Silent alert: status and chat | Four status steps (alert sent, contacts texted, agent checking, passed to 911), text chat with the safety agent, quick replies, Call 911 always in the header. No sound or vibration | [M] Silent alert — status and chat |
 
 ### 1.5 Side menu and settings (opened from the menu button in any header)
 
@@ -145,7 +147,9 @@ Route names are the paths the app's router will use (Expo Router file names).
 | Answer | Short answer; Steps and read-aloud *(offline for saved guides)* | Listening, Quick asks | [M] |
 | One step at a time | Step counter, progress bar, one instruction, Done | Answer, Alert, Guides | [M] |
 | Quick asks | Power is out, Car trouble, Someone is hurt, I'm lost | Home, chat button | [M] |
-| Call | Call 911, Call ICE 1 (first emergency contact), Talk to Remii | Home, phone button | [M] |
+| Call | Call 911, I can't talk, Call ICE 1 (first emergency contact), Talk to Remii | Home, phone button | [M] |
+| Silent alert, hold to send | Says what is sent; Hold to send, or cancel *(Phase 9)* | Call, I can't talk | [M] |
+| Silent alert sent | Sent time, agent's question with Yes and No, Call 911 | Silent alert, hold to send | [M] |
 | Scheduled check-in | Question with Yes and No, plan next steps | Notification | [M] |
 | Alert | Advisory text with What to do | Notification | [M] |
 | Offline guides | Guides stored on the watch | Scroll down from Home | [M] |
@@ -159,5 +163,6 @@ Route names are the paths the app's router will use (Expo Router file names).
 1. **Outage at night (offline).** Chat → Remii's steps → user reports back → check-in scheduled → next morning notification → Chat.
 2. **Car kit (online).** Chat or Ideas → product cards → resqme.com → Add all to my Vehicle plan → Plans.
 3. **Emergency.** SOS button → Emergency SOS → Call 911 or Emergency steps → Contacts alerted.
+3a. **Can't speak.** SOS button → Emergency SOS → I can't talk → hold to send → status and chat with the safety agent. Call 911 stays one tap away on every step.
 4. **Preparing for a trip.** Briefing item → Discuss → Library → guides synced to watch → Watch, Offline guides.
 5. **Building trust.** Remii profile → About you → Memory → erase an item.
