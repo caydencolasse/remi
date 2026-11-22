@@ -55,13 +55,22 @@ h1 em, h2 em {
 }
 
 .page { position: relative; overflow: clip; }
+/* Fades the glow into the page colour at the very top, so there is no hard
+   line under the phone's status bar. */
+.page::before {
+  content: ''; position: absolute; z-index: 1; top: 0; left: 0; right: 0; height: 120px;
+  background: linear-gradient(to bottom, var(--ground) 0%, rgba(244, 243, 241, 0) 100%);
+  pointer-events: none;
+}
 
 .orb { position: absolute; border-radius: 50%; filter: blur(110px); pointer-events: none; }
 .orb-1 { top: -220px; right: -160px; width: 640px; height: 640px; background: var(--red); opacity: 0.3; }
 .orb-2 { top: 520px; left: -220px; width: 520px; height: 520px; background: var(--blue); opacity: 0.24; }
 .orb-3 { top: 1500px; right: -240px; width: 560px; height: 560px; background: var(--red); opacity: 0.2; }
 .orb-4 { bottom: 120px; left: 10%; width: 460px; height: 460px; background: var(--blue); opacity: 0.2; }
-.wrap { position: relative; max-width: 1120px; margin: 0 auto; padding: 0 var(--pad); }
+/* The top gap is padding here, not a margin on the nav: a margin would slip
+   outside the page and leave the nav flush against the top edge. */
+.wrap { position: relative; z-index: 2; max-width: 1120px; margin: 0 auto; padding: 24px var(--pad) 0 var(--pad); }
 
 
 .glass {
@@ -87,8 +96,8 @@ h1 em, h2 em {
 
 /* Nav. It stays at the top while the page scrolls under it. */
 .nav {
-  position: sticky; top: 12px; z-index: 5;
-  margin-top: 20px; min-height: 56px; border-radius: 16px; padding: 8px 8px 8px 20px;
+  position: sticky; top: 12px; top: max(12px, env(safe-area-inset-top)); z-index: 5;
+  min-height: 56px; border-radius: 16px; padding: 8px 8px 8px 20px;
   display: flex; align-items: center; justify-content: space-between; gap: 12px;
 }
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; min-height: 40px; }
@@ -189,7 +198,8 @@ input[aria-invalid="true"] { border-color: var(--error); }
 /* Phone */
 @media (max-width: 699px) {
   :root { --pad: 16px; }
-  .nav { margin-top: 12px; padding: 8px 8px 8px 16px; }
+  .wrap { padding-top: 20px; }
+  .nav { padding: 8px 8px 8px 16px; }
   .brand-text { flex-direction: column; align-items: flex-start; gap: 0; }
   .brand-name { font-size: 19px; line-height: 24px; }
   .brand-by { padding-left: 0; border-left: none; gap: 8px; font-size: 11px; line-height: 16px; }
